@@ -17,21 +17,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ffffff; --alt:#f4f6f9; --ink:#16202b; --text:#33404e; --dim:#5d6b7a; --faint:#8a97a5; --border:#e2e7ec;
-    --dark:#141c26; --dark2:#1d2836; --nav:#242f3c;
-    --accent:#1f66b0; --accent-dark:#164e88; --accent-tint:#e9f1fa; --gold:#f2b134;
-    --shadow-sm:0 1px 2px rgba(16,32,48,.06); --shadow:0 6px 20px rgba(16,32,48,.10); --shadow-lg:0 18px 46px rgba(16,32,48,.16);
-    --radius:12px;
+    --bg:#ffffff; --alt:#f7f6f3; --alt2:#efece6; --ink:#17191c; --text:#3d4148; --dim:#6b6f76; --faint:#9aa0a6; --border:#e7e4de;
+    --dark:#111820; --dark2:#1a232e; --nav:#1b2430;
+    --accent:#1f5fa8; --accent-dark:#174c86; --accent-tint:#eaf1fb; --gold:#d99b2b;
+    --shadow-sm:0 1px 2px rgba(18,28,40,.05), 0 1px 1px rgba(18,28,40,.04);
+    --shadow:0 12px 34px rgba(18,28,40,.10);
+    --shadow-lg:0 26px 64px rgba(18,28,40,.17);
+    --radius:14px; --radius-sm:10px;
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; scroll-padding-top:120px; }
   @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
-  body{ background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased; }
-  a{ color:var(--accent); text-decoration:none; }
+  body{ background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; font-size:17px; line-height:1.75; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  a{ color:var(--accent); text-decoration:none; transition:color .15s ease; }
   a:hover{ color:var(--accent-dark); }
+  a:focus-visible, button:focus-visible, input:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
+  ::selection{ background:rgba(31,95,168,.16); }
   h1,h2,h3,h4{ font-family:'Source Serif 4',Georgia,serif; color:var(--ink); font-weight:600; line-height:1.2; }
   img,svg{ max-width:100%; display:block; }
-  .wrap{ max-width:1180px; margin:0 auto; padding:0 30px; }
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 clamp(20px,4vw,36px); }
 
   /* ---------- Top utility bar ---------- */
   .utilbar{ background:#0e141c; color:#c4ccd6; font-size:.8rem; }
@@ -77,9 +81,9 @@
   }
 
   /* ---------- Hero ---------- */
-  .hero{ position:relative; display:grid; grid-template-columns:44% 56%; min-height:520px; background:var(--dark); }
+  .hero{ position:relative; display:grid; grid-template-columns:43% 57%; min-height:clamp(520px,62vh,650px); background:var(--dark); }
   .hero-photo{ position:relative; overflow:hidden; background:#0e141c; }
-  .hero-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 18%; }
+  .hero-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 20%; }
   .hero-photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(20,28,38,0) 62%, rgba(20,28,38,.85) 100%); }
   .hero-text{ position:relative; display:flex; flex-direction:column; justify-content:center; padding:56px 56px 56px 46px; color:#fff;
     background:radial-gradient(120% 100% at 90% 15%, #24425f 0%, #17222f 55%, #101821 100%); overflow:hidden; }
@@ -88,8 +92,9 @@
     mask-image:radial-gradient(120% 90% at 80% 20%, #000, transparent 75%); }
   .hero-text > *{ position:relative; z-index:2; }
   .hero-eyebrow{ font-size:.82rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#8fc0ec; margin-bottom:12px; }
-  .hero-text h1{ color:#fff; font-size:3rem; line-height:1.06; letter-spacing:-.01em; }
-  .hero-role{ font-size:1.4rem; color:#e7edf3; margin-top:14px; font-family:'Source Serif 4',serif; }
+  .hero-text h1{ color:#fff; font-size:clamp(2.2rem,4vw,3.4rem); line-height:1.05; letter-spacing:-.02em; }
+  .hero-text h1::after{ content:""; display:block; width:66px; height:3px; background:var(--gold); border-radius:2px; margin-top:20px; }
+  .hero-role{ font-size:1.35rem; color:#e7edf3; margin-top:18px; font-family:'Source Serif 4',serif; line-height:1.35; }
   .hero-sub{ font-size:1rem; color:#a9bccd; margin-top:14px; max-width:560px; }
   .hero-quote{ font-style:italic; color:#cdd9e4; margin-top:14px; font-family:'Source Serif 4',serif; font-size:1.05rem; }
   .hero-cta{ margin-top:28px; display:flex; flex-wrap:wrap; gap:14px; }
@@ -104,8 +109,8 @@
 
   .btn{ display:inline-flex; align-items:center; gap:8px; font-size:.94rem; font-weight:600; padding:12px 24px; border-radius:8px; border:2px solid transparent; transition:transform .15s ease, background .15s ease; }
   .btn:hover{ transform:translateY(-2px); }
-  .btn-primary{ background:var(--accent); color:#fff; border-color:var(--accent); }
-  .btn-primary:hover{ background:var(--accent-dark); color:#fff; }
+  .btn-primary{ background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 8px 20px rgba(31,95,168,.32); }
+  .btn-primary:hover{ background:var(--accent-dark); color:#fff; box-shadow:0 10px 26px rgba(31,95,168,.4); }
   .btn-ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,.55); }
   .btn-ghost:hover{ background:rgba(255,255,255,.12); color:#fff; }
   .btn-outline{ background:#fff; color:var(--accent-dark); border-color:#fff; }
@@ -128,16 +133,17 @@
   @media (max-width:620px){ .statsbar-inner{ grid-template-columns:repeat(2,1fr); } .stat:nth-child(3){ border-left:none; } }
 
   /* ---------- Sections ---------- */
-  .band{ padding:70px 0; }
+  .band{ padding:clamp(60px,8vw,110px) 0; }
   .band-alt{ background:var(--alt); }
-  .band.tight{ padding:40px 0; }
-  .sec-head{ max-width:760px; margin-bottom:40px; }
+  .band.tight{ padding:clamp(34px,5vw,56px) 0; }
+  .sec-head{ max-width:760px; margin-bottom:clamp(34px,4vw,52px); }
   .sec-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
-  .eyebrow{ font-size:.78rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
-  .sec-head h2{ font-size:2.1rem; letter-spacing:-.01em; position:relative; padding-bottom:14px; }
-  .sec-head h2::after{ content:""; position:absolute; left:0; bottom:0; width:60px; height:3px; background:var(--gold); border-radius:2px; }
+  .eyebrow{ font-size:.76rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; }
+  .sec-head h2{ font-size:clamp(1.75rem,2.7vw,2.45rem); letter-spacing:-.015em; position:relative; padding-bottom:16px; }
+  .sec-head h2::after{ content:""; position:absolute; left:0; bottom:0; width:54px; height:3px; background:var(--gold); border-radius:2px; }
   .sec-head.center h2::after{ left:50%; transform:translateX(-50%); }
-  .sec-head p{ color:var(--dim); margin-top:16px; font-size:1.02rem; }
+  .sec-head p{ color:var(--dim); margin-top:16px; font-size:1.05rem; max-width:64ch; }
+  .sec-head.center p{ margin-left:auto; margin-right:auto; }
 
   .logos-label{ text-align:center; font-size:.76rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--faint); margin-bottom:20px; }
   .logos{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px 28px; }
@@ -146,15 +152,16 @@
   /* pillars */
   .cards3{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; }
   @media (max-width:760px){ .cards3{ grid-template-columns:1fr; } }
-  .pcard{ background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform .18s ease, box-shadow .18s ease; }
-  .pcard:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
-  .pcard .art{ height:172px; background:var(--accent-tint); }
-  .pcard .art-img{ width:100%; height:100%; object-fit:cover; }
+  .pcard{ background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .pcard:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:#d8d3c9; }
+  .pcard .art{ aspect-ratio:16/10; background:var(--accent-tint); overflow:hidden; }
+  .pcard .art-img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+  .pcard:hover .art-img{ transform:scale(1.04); }
   .art-fallback{ background:linear-gradient(135deg,var(--accent-tint),#fff)!important; }
-  .pcard .body{ padding:22px 24px 26px; }
+  .pcard .body{ padding:24px 24px 26px; display:flex; flex-direction:column; flex:1; }
   .pcard h3{ font-size:1.25rem; }
-  .pcard p{ margin-top:9px; color:var(--dim); font-size:.95rem; }
-  .kw{ margin-top:14px; display:flex; flex-wrap:wrap; gap:7px; }
+  .pcard p{ margin-top:10px; color:var(--dim); font-size:.96rem; }
+  .kw{ margin-top:16px; display:flex; flex-wrap:wrap; gap:7px; }
   .kw span{ font-size:.75rem; color:var(--accent-dark); background:var(--accent-tint); border-radius:999px; padding:4px 11px; }
 
   /* about split */
@@ -210,10 +217,11 @@
   .work{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
   @media (max-width:860px){ .work{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:560px){ .work{ grid-template-columns:1fr; } }
-  .wcard{ background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform .18s ease, box-shadow .18s ease; }
-  .wcard:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
-  .wcard .art{ height:150px; background:var(--accent-tint); }
-  .wcard .art-img{ width:100%; height:100%; object-fit:cover; }
+  .wcard{ background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .wcard:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:#d8d3c9; }
+  .wcard .art{ aspect-ratio:16/9; background:var(--accent-tint); overflow:hidden; }
+  .wcard .art-img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+  .wcard:hover .art-img{ transform:scale(1.04); }
   .wcard .art svg{ width:100%; height:100%; }
   .wcard .body{ padding:18px 20px 22px; }
   .wcard .yr{ font-size:.76rem; font-weight:700; color:#fff; background:var(--accent); border-radius:6px; padding:3px 10px; display:inline-block; margin-bottom:10px; }
@@ -299,9 +307,24 @@
   footer a:hover{ color:#fff; }
   .foot-bottom{ border-top:1px solid rgba(255,255,255,.1); padding-top:18px; font-size:.82rem; text-align:center; }
 
-  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .navbar{ transition:box-shadow .25s ease; }
+  .navbar.scrolled{ box-shadow:0 6px 22px rgba(0,0,0,.24); }
+
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
   .reveal.in{ opacity:1; transform:none; }
-  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; } }
+  .cards3 .reveal:nth-child(2), .work .reveal:nth-child(2), .partner-grid .reveal:nth-child(2), .tri .reveal:nth-child(2){ transition-delay:.08s; }
+  .cards3 .reveal:nth-child(3), .work .reveal:nth-child(3), .partner-grid .reveal:nth-child(3){ transition-delay:.16s; }
+  .cards3 .reveal:nth-child(4), .work .reveal:nth-child(4){ transition-delay:.24s; }
+  .work .reveal:nth-child(5){ transition-delay:.32s; }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+  /* Back to top */
+  .totop{ position:fixed; right:24px; bottom:24px; z-index:70; width:46px; height:46px; border-radius:50%;
+    background:var(--accent); color:#fff; border:none; cursor:pointer; font-size:1.2rem; line-height:1;
+    box-shadow:0 10px 26px rgba(31,95,168,.4); opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, background .2s ease; }
+  .totop.show{ opacity:1; visibility:visible; transform:none; }
+  .totop:hover{ background:var(--accent-dark); }
 </style>
 </head>
 <body id="top">
@@ -399,7 +422,7 @@
   <!-- ABOUT -->
   <section class="band" id="about">
     <div class="wrap split">
-      <div class="visual reveal"><img src="bio-image.png" alt="Rakesh Bhaskaran Nair research overview" style="width:100%;height:auto;display:block;"></div>
+      <div class="visual reveal"><img loading="lazy" src="bio-image.png" alt="Rakesh Bhaskaran Nair research overview" style="width:100%;height:auto;display:block;"></div>
       <div class="reveal">
         <div class="eyebrow">About</div>
         <h2 style="font-size:2rem; padding-bottom:14px; position:relative;">Biography</h2>
@@ -420,7 +443,7 @@
       </div>
       <div class="cards3">
         <div class="pcard reveal">
-          <div class="art"><img class="art-img" src="thermal-spray.jpg" alt="Thermal spray coating deposition" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="thermal-spray.jpg" alt="Thermal spray coating deposition" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body">
             <h3>Thermal Spray Coatings</h3>
             <p>HEA and thermal barrier coatings by flame, HVOF and plasma spray, built to resist wear, erosion and high-temperature corrosion.</p>
@@ -428,7 +451,7 @@
           </div>
         </div>
         <div class="pcard reveal">
-          <div class="art"><img class="art-img" src="cold-spray.jpg" alt="Cold spray coating deposition" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="cold-spray.jpg" alt="Cold spray coating deposition" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body">
             <h3>Cold Spray Coatings</h3>
             <p>Solid-state deposition of advanced and high-entropy alloy powders for erosion-, corrosion- and wear-resistant surfaces and repair.</p>
@@ -436,7 +459,7 @@
           </div>
         </div>
         <div class="pcard reveal">
-          <div class="art"><img class="art-img" src="thermal-diagnostics.png" alt="Thermal diagnostics and sensors for real-time monitoring" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="thermal-diagnostics.png" alt="Thermal diagnostics and sensors for real-time monitoring" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body">
             <h3>Thermal Diagnostics &amp; Sensors</h3>
             <p>Emissivity correction, infrared pyrometry and sensors that monitor melt-pool behaviour in L-PBF in real time.</p>
@@ -444,7 +467,7 @@
           </div>
         </div>
         <div class="pcard reveal">
-          <div class="art"><img class="art-img" src="powder-sustainability.png" alt="Powder sustainability and digital infrastructure" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="powder-sustainability.png" alt="Powder sustainability and digital infrastructure" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body">
             <h3>Powder Sustainability &amp; Digital Infrastructure</h3>
             <p>Reflectance-spectroscopy that quantifies powder oxidation and reuse, powering platforms for powder qualification and circularity.</p>
@@ -571,19 +594,19 @@
           <div class="body"><span class="yr">2026</span><h3>Spectral Imaging Platform</h3><p>Spectral imaging system for the metal powder qualification platform.</p></div>
         </div>
         <div class="wcard reveal">
-          <div class="art"><img class="art-img" src="thermal-system.jpg" alt="Customised thermal measuring system with pyrometer and TS1500 stage" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="thermal-system.jpg" alt="Customised thermal measuring system with pyrometer and TS1500 stage" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body"><span class="yr">2026</span><h3>Thermal Measuring System</h3><p>Customised thermal measuring system for emissivity estimation in the L-PBF framework.</p></div>
         </div>
         <div class="wcard reveal">
-          <div class="art"><img class="art-img" src="abradable-rig.jpg" alt="Sub-scale abradable test rig for aerospace static seals" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="abradable-rig.jpg" alt="Sub-scale abradable test rig for aerospace static seals" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body"><span class="yr">2022</span><h3>Abradable Test Rig</h3><p>Sub-scale abradable test rig for aerospace static seals, led with Kaue Bertuol.</p></div>
         </div>
         <div class="wcard reveal">
-          <div class="art"><img class="art-img" src="liquid-impingement-rig.jpg" alt="High-speed liquid impingement erosion rig" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="liquid-impingement-rig.jpg" alt="High-speed liquid impingement erosion rig" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body"><span class="yr">2018</span><h3>Liquid Impingement Erosion Rig</h3><p>High-speed liquid impingement erosion rig (up to 150 m/s) for extreme-environment simulation.</p></div>
         </div>
         <div class="wcard reveal">
-          <div class="art"><img class="art-img" src="slurry-rig.jpg" alt="Slurry erosion-corrosion test rig schematic" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="slurry-rig.jpg" alt="Slurry erosion-corrosion test rig schematic" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body"><span class="yr">2017</span><h3>Slurry Erosion-Corrosion Rig</h3><p>Slurry-based erosion-corrosion test rig simulating offshore and energy environments.</p></div>
         </div>
       </div>
@@ -717,7 +740,7 @@
       </div>
       <div class="mini-head reveal">Lead Guest Editor Roles</div>
       <div class="feature reveal">
-        <div class="fimg"><img src="npj-flyer.png" alt="npj Materials Degradation special collection flyer" onerror="this.parentElement.parentElement.style.display='none'"></div>
+        <div class="fimg"><img loading="lazy" src="npj-flyer.png" alt="npj Materials Degradation special collection flyer" onerror="this.parentElement.parentElement.style.display='none'"></div>
         <div>
           <div class="eyebrow">Lead Guest Editor · Nature Portfolio</div>
           <h3 style="font-size:1.35rem; color:var(--ink);">npj Materials Degradation</h3>
@@ -726,7 +749,7 @@
         </div>
       </div>
       <div class="feature reveal">
-        <div class="fimg"><img src="discover-surfaces-flyer.png" alt="Discover Surfaces collection flyer" onerror="this.parentElement.parentElement.style.display='none'"></div>
+        <div class="fimg"><img loading="lazy" src="discover-surfaces-flyer.png" alt="Discover Surfaces collection flyer" onerror="this.parentElement.parentElement.style.display='none'"></div>
         <div>
           <div class="eyebrow">Lead Guest Editor · Springer Nature</div>
           <h3 style="font-size:1.35rem; color:var(--ink);">Discover Surfaces</h3>
@@ -782,14 +805,14 @@
         <p>Selected certificates and professional recognition. Click any to view the full document.</p>
       </div>
       <div class="cert-grid reveal">
-        <a class="cert" href="aconity-certificate.pdf" target="_blank" rel="noopener"><img src="certificate-1.jpg" alt="Certificate of Participation — Aconity3D L-PBF training" onerror="this.closest('.cert').remove()"><div class="cap">L-PBF Training — Aconity3D, Germany</div></a>
-        <a class="cert" href="certificate-2.jpg" target="_blank" rel="noopener"><img src="certificate-2.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
-        <a class="cert" href="certificate-3.jpg" target="_blank" rel="noopener"><img src="certificate-3.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
-        <a class="cert" href="certificate-4.jpg" target="_blank" rel="noopener"><img src="certificate-4.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
-        <a class="cert" href="certificate-5.jpg" target="_blank" rel="noopener"><img src="certificate-5.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
-        <a class="cert" href="certificate-6.jpg" target="_blank" rel="noopener"><img src="certificate-6.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
-        <a class="cert" href="certificate-7.jpg" target="_blank" rel="noopener"><img src="certificate-7.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
-        <a class="cert" href="certificate-8.jpg" target="_blank" rel="noopener"><img src="certificate-8.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
+        <a class="cert" href="aconity-certificate.pdf" target="_blank" rel="noopener"><img loading="lazy" src="certificate-1.jpg" alt="Certificate of Participation — Aconity3D L-PBF training" onerror="this.closest('.cert').remove()"><div class="cap">L-PBF Training — Aconity3D, Germany</div></a>
+        <a class="cert" href="certificate-2.jpg" target="_blank" rel="noopener"><img loading="lazy" src="certificate-2.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
+        <a class="cert" href="certificate-3.jpg" target="_blank" rel="noopener"><img loading="lazy" src="certificate-3.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
+        <a class="cert" href="certificate-4.jpg" target="_blank" rel="noopener"><img loading="lazy" src="certificate-4.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
+        <a class="cert" href="certificate-5.jpg" target="_blank" rel="noopener"><img loading="lazy" src="certificate-5.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
+        <a class="cert" href="certificate-6.jpg" target="_blank" rel="noopener"><img loading="lazy" src="certificate-6.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
+        <a class="cert" href="certificate-7.jpg" target="_blank" rel="noopener"><img loading="lazy" src="certificate-7.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
+        <a class="cert" href="certificate-8.jpg" target="_blank" rel="noopener"><img loading="lazy" src="certificate-8.jpg" alt="Certificate" onerror="this.closest('.cert').remove()"></a>
       </div>
     </div>
   </section>
@@ -848,6 +871,8 @@
     </div>
   </footer>
 
+  <button class="totop" id="totop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
   // Mobile nav
   document.querySelectorAll('nav.mainnav a').forEach(a =>
@@ -871,8 +896,16 @@
     links.forEach(l => l.classList.remove('active'));
     if (cur) cur.link.classList.add('active');
   }
-  window.addEventListener('scroll', onScroll, { passive:true });
-  onScroll();
+  // Nav shadow + back-to-top on scroll
+  const navbar = document.querySelector('.navbar');
+  const toTop = document.getElementById('totop');
+  function onScrollChrome(){
+    const y = window.scrollY;
+    if(navbar) navbar.classList.toggle('scrolled', y > 8);
+    if(toTop) toTop.classList.toggle('show', y > 500);
+  }
+  window.addEventListener('scroll', () => { onScroll(); onScrollChrome(); }, { passive:true });
+  onScroll(); onScrollChrome();
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
