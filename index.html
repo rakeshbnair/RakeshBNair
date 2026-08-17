@@ -163,6 +163,10 @@
   .pcard p{ margin-top:10px; color:var(--dim); font-size:.96rem; }
   .kw{ margin-top:16px; display:flex; flex-wrap:wrap; gap:7px; }
   .kw span{ font-size:.75rem; color:var(--accent-dark); background:var(--accent-tint); border-radius:999px; padding:4px 11px; }
+  .ptag{ display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:4px 11px; border-radius:999px; margin-bottom:12px; }
+  .ptag.protect{ background:#e3f2ea; color:#1f7a4d; }
+  .ptag.detect{ background:#e8f0fb; color:#1f5fa8; }
+  .ptag.enable{ background:#f6edda; color:#9a7411; }
 
   /* about split */
   .split{ display:grid; grid-template-columns:.85fr 1.15fr; gap:50px; align-items:center; }
@@ -214,7 +218,7 @@
   .watch{ display:inline-block; margin-top:14px; font-weight:600; }
 
   /* design & execution */
-  .work{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .work{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
   @media (max-width:860px){ .work{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:560px){ .work{ grid-template-columns:1fr; } }
   .wcard{ background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
@@ -279,6 +283,20 @@
   .cert:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
   .cert img{ width:100%; height:230px; object-fit:contain; background:#fff; padding:12px; }
   .cert .cap{ font-size:.82rem; color:var(--dim); text-align:center; padding:0 10px 12px; }
+
+  /* Consulting / advisory */
+  .chips{ display:flex; flex-wrap:wrap; gap:9px; }
+  .chip{ font-size:.86rem; color:var(--accent-dark); background:var(--accent-tint); border:1px solid #d4e2ef; border-radius:999px; padding:7px 15px; }
+  .svc-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  @media (max-width:900px){ .svc-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .svc-grid{ grid-template-columns:1fr; } }
+  .svc{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:22px; box-shadow:var(--shadow-sm); transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+  .svc:hover{ transform:translateY(-4px); box-shadow:var(--shadow); border-color:#d8d3c9; }
+  .svc .n{ font-family:'Source Serif 4',serif; font-weight:700; color:var(--accent); font-size:1.1rem; }
+  .svc h4{ font-size:1.06rem; color:var(--ink); margin-top:4px; }
+  .svc p{ font-size:.9rem; color:var(--dim); margin-top:8px; }
+  .consult-cta{ margin-top:32px; background:var(--alt); border:1px solid var(--border); border-radius:var(--radius); padding:28px 32px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px; }
+  .consult-cta p{ font-size:1.05rem; color:var(--ink); font-weight:500; margin:0; max-width:620px; }
 
   /* contact */
   .contact{ background:radial-gradient(120% 100% at 85% 10%, #24425f 0%, #17222f 55%, #101821 100%); color:#eaf1f8; }
@@ -370,6 +388,7 @@
         <a href="#funding">Funding</a>
         <a href="#teaching">Teaching</a>
         <a href="#collaborations">Collaborations</a>
+        <a href="#advisory">Advisory</a>
         <a href="#service">Service</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -392,8 +411,8 @@
       <div class="hero-eyebrow">Principal Investigator &amp; Early-Career Research Leader</div>
       <h1>Dr. Rakesh Bhaskaran Nair</h1>
       <div class="hero-role">School of Mechanical &amp; Manufacturing Engineering, Dublin City University</div>
-      <p class="hero-quote">“Engineering durable surfaces and catching degradation as it happens.”</p>
-      <p class="hero-sub"><strong style="color:#dce8f4;">Core Focus:</strong> Thermal &amp; Cold Spray Coatings · Materials Degradation (Erosion-Corrosion &amp; High-Temp) · Real-Time AM Diagnostics</p>
+      <p class="hero-quote">Real-time material integrity for extreme environments.</p>
+      <p class="hero-sub">Engineering coatings that protect components against degradation, and diagnostics that detect it as it happens.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#about">About Me</a>
         <a class="btn btn-ghost" href="#focus">Explore Research</a>
@@ -408,6 +427,27 @@
       <a class="btn btn-outline" href="#publications">View Publications</a>
     </div>
   </div>
+
+  <!-- INDUSTRY & TECHNOLOGY ADVISORY -->
+  <section class="band" id="advisory">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Industry &amp; Technology Advisory</div>
+        <h2>What I help industry solve</h2>
+        <p>I work with companies on technically challenging problems in advanced materials, coatings and manufacturing processes, turning deep technical expertise into practical outcomes.</p>
+      </div>
+      <div class="svc-grid reveal">
+        <div class="svc"><h4>Materials &amp; Coating Failure</h4><p>Failure mechanisms, degradation, wear, erosion-corrosion and coating selection.</p></div>
+        <div class="svc"><h4>Manufacturing Process Optimisation</h4><p>Thermal spray, cold spray, additive manufacturing and powder/process qualification.</p></div>
+        <div class="svc"><h4>Process Diagnostics &amp; Sensing</h4><p>Thermal, optical and spectral diagnostics for manufacturing-process monitoring.</p></div>
+        <div class="svc"><h4>Technology &amp; R&amp;D Strategy</h4><p>Technology assessment, experimental programme design and industry-academic R&amp;D development.</p></div>
+      </div>
+      <div class="consult-cta reveal">
+        <p>Have a materials, coatings or manufacturing challenge? Let's scope it and find the fastest route to an answer.</p>
+        <a class="btn btn-primary" href="#contact">Discuss a Technical Problem →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- STATS -->
   <div class="statsbar">
@@ -427,7 +467,7 @@
         <div class="eyebrow">About</div>
         <h2 style="font-size:2rem; padding-bottom:14px; position:relative;">Biography</h2>
         <p style="margin-top:18px;">Dr. Rakesh Bhaskaran Nair is a Principal Investigator and Early Career Research Leader in the School of Mechanical and Manufacturing Engineering at Dublin City University, Ireland. His research addresses a single question: how materials degrade in extreme operating environments, and how that degradation can be resisted and detected before it causes failure. He pursues this from two directions, engineering coatings that protect components against degradation, and developing diagnostics that reveal it as it happens. He currently leads a Research Ireland ARC Hub project developing a metal powder quality intelligence platform for advanced manufacturing.</p>
-        <p>On the protection side, he designs thermal spray and cold spray coatings, using advanced material systems engineered to withstand erosion, corrosion, wear, and high-temperature oxidation in aerospace, wind-energy, and marine applications, supported by erosion and erosion–corrosion test rigs he has designed and built himself. On the detection side, he develops real-time diagnostics for laser powder bed fusion, including a custom infrared and RGB imaging system and spectral reflectance analysis that assess metal powder quality and oxidation as parts are built. Together these lines of work form a single capability: certifying the integrity of materials in real time, rather than only after they have failed in service.</p>
+        <p>On the protection side, he designs thermal spray and cold spray coatings, using advanced material systems engineered to withstand erosion, corrosion, wear, and high-temperature oxidation in aerospace, wind-energy, and marine applications, supported by erosion and erosion-corrosion test rigs he has designed and built himself. On the detection side, he develops real-time diagnostics for laser powder bed fusion, including a custom infrared and RGB imaging system and spectral reflectance analysis that assess metal powder quality and oxidation as parts are built. Together these lines of work form a single capability: certifying the integrity of materials in real time, rather than only after they have failed in service.</p>
         <p>Dr. Nair is Lead Guest Editor for <em>npj Materials Degradation</em> (Nature Portfolio) and <em>Discover Surfaces</em> (Springer Nature). He received his Ph.D. from Shiv Nadar University, India, in 2020, and held postdoctoral research positions at the University of Alberta and Concordia University in Canada before joining Dublin City University.</p>
       </div>
     </div>
@@ -437,41 +477,45 @@
   <section class="band band-alt" id="focus">
     <div class="wrap">
       <div class="sec-head center reveal">
-        <div class="eyebrow">What I Work On</div>
-        <h2>Four Connected Research Pillars</h2>
-        <p>Coatings, diagnostics and sustainable powder qualification for extreme environments.</p>
+        <div class="eyebrow">Research</div>
+        <h2>Protect. Detect. Enable.</h2>
+        <p>Four connected research directions with one goal: certifying material integrity in extreme environments.</p>
       </div>
       <div class="cards3">
         <div class="pcard reveal">
-          <div class="art"><img loading="lazy" class="art-img" src="thermal-spray.jpg" alt="Thermal spray coating deposition" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="thermal-spray.jpg" alt="Protective coatings for extreme environments" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body">
-            <h3>Thermal Spray Coatings</h3>
-            <p>HEA and thermal barrier coatings by flame, HVOF and plasma spray, built to resist wear, erosion and high-temperature corrosion.</p>
-            <div class="kw"><span>HEA coatings</span><span>CMAS corrosion</span><span>Erosion &amp; wear</span></div>
+            <span class="ptag protect">Protect</span>
+            <h3>Protective Coatings for Extreme Environments</h3>
+            <p>Thermal, HVOF, plasma and cold spray deposition of advanced material systems (including high-entropy alloys) against erosion, corrosion, wear and high-temperature oxidation.</p>
+            <div class="kw"><span>Thermal &amp; cold spray</span><span>HEA / advanced materials</span><span>Erosion &amp; corrosion</span></div>
           </div>
         </div>
         <div class="pcard reveal">
-          <div class="art"><img loading="lazy" class="art-img" src="cold-spray.jpg" alt="Cold spray coating deposition" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="thermal-diagnostics.png" alt="Real-time diagnostics for additive manufacturing" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body">
-            <h3>Cold Spray Coatings</h3>
-            <p>Solid-state deposition of advanced and high-entropy alloy powders for erosion-, corrosion- and wear-resistant surfaces and repair.</p>
-            <div class="kw"><span>Solid-state</span><span>Advanced Materials</span><span>Surface repair</span></div>
-          </div>
-        </div>
-        <div class="pcard reveal">
-          <div class="art"><img loading="lazy" class="art-img" src="thermal-diagnostics.png" alt="Thermal diagnostics and sensors for real-time monitoring" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
-          <div class="body">
-            <h3>Thermal Diagnostics &amp; Sensors</h3>
-            <p>Emissivity correction, infrared pyrometry and sensors that monitor melt-pool behaviour in L-PBF in real time.</p>
+            <span class="ptag detect">Detect</span>
+            <h3>Real-Time Diagnostics for Additive Manufacturing</h3>
+            <p>Emissivity correction, infrared pyrometry and in-situ sensing to monitor melt-pool behaviour as parts are built.</p>
             <div class="kw"><span>IR pyrometry</span><span>Emissivity</span><span>In-situ monitoring</span></div>
           </div>
         </div>
         <div class="pcard reveal">
-          <div class="art"><img loading="lazy" class="art-img" src="powder-sustainability.png" alt="Powder sustainability and digital infrastructure" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="powder-sustainability.png" alt="Sustainable powder qualification and circularity" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body">
-            <h3>Powder Sustainability &amp; Digital Infrastructure</h3>
-            <p>Reflectance-spectroscopy that quantifies powder oxidation and reuse, powering platforms for powder qualification and circularity.</p>
-            <div class="kw"><span>Powder reuse</span><span>Circularity</span><span>Data platforms</span></div>
+            <span class="ptag detect">Detect</span>
+            <h3>Sustainable Powder Qualification &amp; Circularity</h3>
+            <p>Spectral reflectance analysis of powder oxidation and reuse, powering platforms for metal powder qualification and feedstock circularity.</p>
+            <div class="kw"><span>Reflectance spectroscopy</span><span>Powder reuse</span><span>Circularity</span></div>
+          </div>
+        </div>
+        <div class="pcard reveal">
+          <div class="art"><img loading="lazy" class="art-img" src="liquid-impingement-rig.jpg" alt="Bespoke instrumentation and test systems" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="body">
+            <span class="ptag enable">Enable</span>
+            <h3>Bespoke Instrumentation &amp; Test Systems</h3>
+            <p>Erosion, erosion-corrosion and diagnostic rigs I design and build from first principles to make the work above possible.</p>
+            <div class="kw"><span>Test rigs</span><span>Custom sensors</span><span>Built from scratch</span></div>
           </div>
         </div>
       </div>
@@ -598,10 +642,6 @@
           <div class="body"><span class="yr">2026</span><h3>Thermal Measuring System</h3><p>Customised thermal measuring system for emissivity estimation in the L-PBF framework.</p></div>
         </div>
         <div class="wcard reveal">
-          <div class="art"><img loading="lazy" class="art-img" src="abradable-rig.jpg" alt="Sub-scale abradable test rig for aerospace static seals" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
-          <div class="body"><span class="yr">2022</span><h3>Abradable Test Rig</h3><p>Sub-scale abradable test rig for aerospace static seals, led with Kaue Bertuol.</p></div>
-        </div>
-        <div class="wcard reveal">
           <div class="art"><img loading="lazy" class="art-img" src="liquid-impingement-rig.jpg" alt="High-speed liquid impingement erosion rig" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body"><span class="yr">2018</span><h3>Liquid Impingement Erosion Rig</h3><p>High-speed liquid impingement erosion rig (up to 150 m/s) for extreme-environment simulation.</p></div>
         </div>
@@ -697,8 +737,7 @@
         <div>
           <h3>Supervision &amp; Mentoring</h3>
           <ul class="plain">
-            <li>Day-to-day mentor to <strong>9+ postgraduate researchers</strong> (3+ PhD, 6+ MSc).</li>
-            <li>Two co-supervised MSc researchers reached co-authorship on <strong>3+ Q1 publications</strong>.</li>
+            <li>Mentored <strong>9+ postgraduate researchers</strong> (3+ PhD, 6+ MSc), two to co-authorship on <strong>3+ Q1 papers</strong>.</li>
             <li>Trained <strong>10+ HQPs</strong> on high-temperature tribometer safety and SOP adherence.</li>
           </ul>
         </div>
@@ -824,6 +863,7 @@
         <div class="eyebrow" style="color:#8fc0ec;">Let's Collaborate</div>
         <h2>Let's Collaborate</h2>
         <p class="lead">If you are interested in developing a research project, funding proposal, industry collaboration, or student research opportunity, I would be pleased to discuss potential areas of collaboration.</p>
+        <a class="btn btn-primary" href="mailto:rakesh.nair@dcu.ie" style="margin-top:24px;">Email me</a>
       </div>
       <div class="info reveal">
         <p><strong>Email:</strong> <a href="mailto:rakesh.nair@dcu.ie">rakesh.nair@dcu.ie</a></p>
