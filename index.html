@@ -154,8 +154,8 @@
   @media (max-width:760px){ .cards3{ grid-template-columns:1fr; } }
   .pcard{ background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
   .pcard:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:#d8d3c9; }
-  .pcard .art{ aspect-ratio:16/10; background:var(--accent-tint); overflow:hidden; }
-  .pcard .art-img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+  .pcard .art{ aspect-ratio:16/10; background:#eef1f5; overflow:hidden; padding:12px; }
+  .pcard .art-img{ width:100%; height:100%; object-fit:contain; transition:transform .3s ease; }
   .pcard:hover .art-img{ transform:scale(1.04); }
   .art-fallback{ background:linear-gradient(135deg,var(--accent-tint),#fff)!important; }
   .pcard .body{ padding:24px 24px 26px; display:flex; flex-direction:column; flex:1; }
@@ -223,8 +223,8 @@
   @media (max-width:560px){ .work{ grid-template-columns:1fr; } }
   .wcard{ background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
   .wcard:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:#d8d3c9; }
-  .wcard .art{ aspect-ratio:16/9; background:var(--accent-tint); overflow:hidden; }
-  .wcard .art-img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+  .wcard .art{ aspect-ratio:16/9; background:#eef1f5; overflow:hidden; padding:10px; }
+  .wcard .art-img{ width:100%; height:100%; object-fit:contain; transition:transform .3s ease; }
   .wcard:hover .art-img{ transform:scale(1.04); }
   .wcard .art svg{ width:100%; height:100%; }
   .wcard .body{ padding:18px 20px 22px; }
@@ -462,7 +462,7 @@
   <!-- ABOUT -->
   <section class="band" id="about">
     <div class="wrap split">
-      <div class="visual reveal"><img loading="lazy" src="bio-image.png" alt="Rakesh Bhaskaran Nair research overview" style="width:100%;height:auto;display:block;"></div>
+      <div class="visual reveal"><img loading="lazy" src="bio-image.jpg" alt="Real-time material integrity for extreme environments: protect and detect" style="width:100%;height:auto;display:block;"></div>
       <div class="reveal">
         <div class="eyebrow">About</div>
         <h2 style="font-size:2rem; padding-bottom:14px; position:relative;">Biography</h2>
@@ -501,7 +501,7 @@
           </div>
         </div>
         <div class="pcard reveal">
-          <div class="art"><img loading="lazy" class="art-img" src="powder-sustainability.png" alt="Sustainable powder qualification and circularity" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><svg class="art-img" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Powder qualification and circularity"><defs><radialGradient id="pw" cx="34%" cy="28%" r="78%"><stop offset="0%" stop-color="#ffffff"/><stop offset="40%" stop-color="#d5dbe3"/><stop offset="74%" stop-color="#8b95a4"/><stop offset="100%" stop-color="#465264"/></radialGradient></defs><rect x="206" y="46" width="168" height="120" rx="8" fill="#ffffff" stroke="#e0e5eb"/><line x1="224" y1="148" x2="360" y2="148" stroke="#c6cdd6" stroke-width="2"/><line x1="224" y1="62" x2="224" y2="148" stroke="#c6cdd6" stroke-width="2"/><path d="M226 140 C 258 72, 292 70, 316 100 S 348 138, 358 128" fill="none" stroke="#1f5fa8" stroke-width="3" stroke-linecap="round"/><path d="M226 146 C 262 112, 306 108, 358 120" fill="none" stroke="#8fb8e8" stroke-width="2.4" stroke-linecap="round"/><circle cx="284" cy="78" r="3" fill="#1f5fa8"/><circle cx="316" cy="100" r="3" fill="#1f5fa8"/><g><circle cx="86" cy="150" r="24" fill="url(#pw)"/><circle cx="126" cy="140" r="16" fill="url(#pw)"/><circle cx="64" cy="182" r="16" fill="url(#pw)"/><circle cx="104" cy="180" r="19" fill="url(#pw)"/><circle cx="140" cy="170" r="12" fill="url(#pw)"/><circle cx="74" cy="118" r="11" fill="url(#pw)"/><circle cx="150" cy="150" r="9" fill="url(#pw)"/><circle cx="120" cy="196" r="8" fill="url(#pw)"/></g><g fill="none" stroke="#2e9e6b" stroke-width="4" stroke-linecap="round"><path d="M40 150 a66 66 0 0 1 66 -66"/><path d="M172 150 a66 66 0 0 1 -66 66"/></g><path d="M104 82 l 12 -3 l -5 12 z" fill="#2e9e6b"/><path d="M108 218 l -12 3 l 5 -12 z" fill="#2e9e6b"/></svg></div>
           <div class="body">
             <span class="ptag detect">Detect</span>
             <h3>Sustainable Powder Qualification &amp; Circularity</h3>
@@ -510,7 +510,7 @@
           </div>
         </div>
         <div class="pcard reveal">
-          <div class="art"><img loading="lazy" class="art-img" src="liquid-impingement-rig.jpg" alt="Bespoke instrumentation and test systems" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
+          <div class="art"><img loading="lazy" class="art-img" src="slurry-rig.jpg" alt="Bespoke instrumentation and test systems" onerror="this.style.display='none'; this.parentElement.classList.add('art-fallback')"></div>
           <div class="body">
             <span class="ptag enable">Enable</span>
             <h3>Bespoke Instrumentation &amp; Test Systems</h3>
@@ -531,24 +531,19 @@
         <p>29 peer-reviewed articles, 1,220+ citations, h-index 18, with 18 as first or corresponding author. Grouped below by theme, each linked to its DOI.</p>
       </div>
       <div class="reveal">
-        <div class="subhead">Thermal Spray Coatings</div>
+        <div class="subhead">Protective Coatings &amp; Degradation</div>
         <div class="pubgrid">
           <div class="pubcard"><div class="t">High-Entropy Alloy Coatings Deposited by Thermal Spraying Technologies: A Review of Strengthening Mechanisms, Performance Assessments and Future Perspectives</div><div class="m"><em>Metals</em>, 13, 579 · 2023</div><a class="doi" href="https://doi.org/10.3390/met13030579" target="_blank" rel="noopener">View DOI →</a></div>
           <div class="pubcard"><div class="t">Calcia-Magnesia-Alumino-Silicate (CMAS) Corrosion Attack on Thermally Sprayed Thermal Barrier Coatings: A Comprehensive Review</div><div class="m"><em>npj Materials Degradation</em>, 8, 44 · 2024</div><a class="doi" href="https://doi.org/10.1038/s41529-024-00462-w" target="_blank" rel="noopener">View DOI →</a></div>
           <div class="pubcard"><div class="t">Effect of Microstructure on Wear and Corrosion Performance of Thermally Sprayed AlCoCrFeMo High-Entropy Alloy Coatings</div><div class="m"><em>Advanced Engineering Materials</em>, 24(9), 2001713 · 2022</div><a class="doi" href="https://doi.org/10.1002/adem.202101713" target="_blank" rel="noopener">View DOI →</a></div>
           <div class="pubcard"><div class="t">Effect of Tungsten and Vanadium Additions on the Dry Abrasive Wear and Solid Particle Erosion of Flame-Sprayed AlCoCrFeMo High-Entropy Alloy Coatings</div><div class="m"><em>Int. Journal of Refractory Metals and Hard Materials</em>, 114, 106245 · 2023</div><a class="doi" href="https://doi.org/10.1016/j.ijrmhm.2023.106245" target="_blank" rel="noopener">View DOI →</a></div>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="subhead">Cold Spray Coatings</div>
-        <div class="pubgrid">
           <div class="pubcard"><div class="t">Dry Abrasive Wear and Solid Particle Erosion Assessments of High-Entropy Alloy Coatings Fabricated by Cold Spraying</div><div class="m"><em>Materials Today Communications</em>, 34, 105527 · 2023</div><a class="doi" href="https://doi.org/10.1016/j.mtcomm.2023.105527" target="_blank" rel="noopener">View DOI →</a></div>
           <div class="pubcard"><div class="t">Sliding Wear Behavior of High-Entropy Alloy Coatings Deposited through Cold Spraying and Flame Spraying: A Comparative Assessment</div><div class="m"><em>Wear</em>, 516-517, 204596 · 2023</div><a class="doi" href="https://doi.org/10.1016/j.wear.2022.204596" target="_blank" rel="noopener">View DOI →</a></div>
           <div class="pubcard"><div class="t">Enhanced Wear Resistance of AlCoCrFeMo High-Entropy Coatings through Various Thermal Spray Techniques</div><div class="m"><em>Surface and Coatings Technology</em>, 477, 130311 · 2024</div><a class="doi" href="https://doi.org/10.1016/j.surfcoat.2023.130311" target="_blank" rel="noopener">View DOI →</a></div>
         </div>
       </div>
       <div class="reveal">
-        <div class="subhead">Additive Manufacturing &amp; Emissivity</div>
+        <div class="subhead">Diagnostics &amp; Powder Qualification</div>
         <div class="pubgrid">
           <div class="pubcard"><div class="t">Spectral Emissivity Hysteresis in NiTi Powders: A Framework for Reliable Additive Manufacturing Thermal Monitoring</div><div class="m"><em>Optics and Laser Technology</em>, 203, 115836 · 2026</div><a class="doi" href="https://doi.org/10.1016/j.optlastec.2026.115836" target="_blank" rel="noopener">View DOI →</a></div>
           <div class="pubcard"><div class="t">Nickel-Dependent Emissivity Calibration and Real-Time Microstructural Monitoring of NiTi Powders: An Ex-Situ Pyrometry Analysis for Laser Powder Bed Fusion</div><div class="m"><em>Measurement</em>, 258, 119520 · 2025</div><a class="doi" href="https://doi.org/10.1016/j.measurement.2025.119520" target="_blank" rel="noopener">View DOI →</a></div>
